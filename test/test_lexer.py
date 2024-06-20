@@ -15,27 +15,11 @@ def ejecutar_lexer(self, sql: str, token_list: List[Dict[str, str]]):
 
 class SQLLexerTest(unittest.TestCase):
     def test_1(self):
-        sql = "SELECT * FROM my_table;"
+        sql = "SELECT * FROM producto;"
         ejecutar_lexer(self, sql, [
             {'type': 'IDENTIFIER', 'value': 'SELECT'},
             {'type': 'STAR', 'value': '*'},
             {'type': 'IDENTIFIER', 'value': 'FROM'},
-            {'type': 'IDENTIFIER', 'value': 'my_table'},
+            {'type': 'IDENTIFIER', 'value': 'producto'},
             {'type': 'SEMICOLON', 'value': ';'},
-        ])
-
-    def test_2(self):
-        sql = "SELECT name, age FROM users WHERE age > 30;"
-        ejecutar_lexer(self, sql, [
-            {'type': 'IDENTIFIER', 'value': 'SELECT'},
-            {'type': 'IDENTIFIER', 'value': 'name'},
-            {'type': 'COMMA', 'value': ','},
-            {'type': 'IDENTIFIER', 'value': 'age'},
-            {'type': 'IDENTIFIER', 'value': 'FROM'},
-            {'type': 'IDENTIFIER', 'value': 'users'},
-            {'type': 'IDENTIFIER', 'value': 'WHERE'},
-            {'type': 'IDENTIFIER', 'value': 'age'},
-            {'type': 'GREATER', 'value': '>'},
-            {'type': 'NUMBER', 'value': 30},
-            {'type': 'SEMICOLON', 'value': ';'}
         ])

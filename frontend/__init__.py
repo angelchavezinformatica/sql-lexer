@@ -16,7 +16,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.SafeArea(content=ft.Column(controls=[
-            # *inventory_view(),
+            # *inventory_view(page),
             *add_product_view(page)
         ]))
     )

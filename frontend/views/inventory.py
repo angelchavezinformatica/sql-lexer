@@ -10,7 +10,7 @@ def actions():
     ]))
 
 
-def list_data(db: ConnectDB):
+def list_data():
     # Se realiza la conección a la bas de datos sqlite3
     db = ConnectDB()
 

@@ -37,10 +37,10 @@ class SQLLexer:
         r'[a-zA-Z_][a-zA-Z_0-9]*'
         return t
 
-    # Expresión regular para numeros
+    # Expresión regular para números (incluyendo decimales)
     def t_NUMBER(self, t):
-        r'\d+'
-        t.value = int(t.value)
+        r'\d+(\.\d+)?'
+        t.value = float(t.value) if '.' in t.value else int(t.value)
         return t
 
     # Expresión regular para comillas
